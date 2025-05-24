@@ -9,15 +9,19 @@ export class HeroesService {
 
     async create(data: HeroesDTO) {
 
+        if (!data || !data.nome) {
+            throw new Error('O corpo da requisição deve incluir: { "imagem": string, "nome": string, "origem": string, "habilidades": string }');
+        }
+
         const heroExist = await this.prisma.hero.findFirst({
             where: {
                 nome: data.nome
             }
         })
 
-        if (heroExist) {
-            throw new Error(`${data.nome} já existe`)
-        }
+        //if (heroExist) {
+        //    throw new Error(`${data.nome} já existe`)
+        //}
 
         const hero = await this.prisma.hero.create({
             data: {
@@ -28,5 +32,9 @@ export class HeroesService {
             },
         });
         return hero;
+    }
+
+    async findAll() {
+        return await this.prisma.hero.findMany();
     }
 }
