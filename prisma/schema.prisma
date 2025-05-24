@@ -6,10 +6,20 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
+}
+
+
+model hero {
+  id		  Int     @id @default(autoincrement())
+  imagem      String  //@db.VarChar(255)
+  nome		  String  //@db.VarChar(100)
+  origem	  String  //@db.VarChar(100)
+  habilidades String  //@db.Text
+
+  @@map("heroes")
 }
