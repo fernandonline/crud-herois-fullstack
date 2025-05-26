@@ -21,17 +21,21 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Descrição
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Backend de uma aplicação full-stack com Node.js com NestJS. O objetivo é desenvolver um sistema de gerenciamento de heróis da Marvel com operações CRUD (Create, Read, Update, Delete).
 
-## Project setup
+## iniciar o projeto
 
 ```bash
+$ git clone <repositório>
+
+$ cd <diretório-do-projeto>
+
 $ npm install
 ```
 
-## Compile and run the project
+## copile e rode
 
 ```bash
 # development
@@ -44,45 +48,28 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Deployment
+## Recursos
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+    Criar Herói
+        Endpoint: /heroes
+        Método: POST
+        Descrição: Cria um novo herói. Os dados do herói (nome, habilidades, e origem) devem ser enviados no corpo da requisição.
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+    Listar Heróis
+        Endpoint: /heroes
+        Método: GET
+        Descrição: Retorna a lista de todos os heróis.
 
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
+    Atualizar Herói
+        Endpoint: /heroes/:id
+        Método: PUT
+        Descrição: Atualiza um herói existente com base no ID. Os novos dados do herói (nome, habilidades, e origem) devem ser enviados no corpo da requisição.
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+    Excluir Herói
+        Endpoint: /heroes/:id
+        Método: DELETE
+        Descrição: Exclui um herói existente com base no ID.
 
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
 
 ## Secret key
 [Gist](https://gist.github.com/)
