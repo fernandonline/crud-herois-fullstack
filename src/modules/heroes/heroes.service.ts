@@ -37,7 +37,7 @@ export class HeroesService {
         return await this.prisma.hero.findMany();
     }
 
-    async findOne(id: number) {
+    async findOne(id: string) {
         const hero = await this.prisma.hero.findUnique({
             where: { id }
         });
@@ -49,34 +49,32 @@ export class HeroesService {
         return hero;
     }
 
-    async update(id: number, data: HeroesDTO) {
+    async update(id: string, data: HeroesDTO) {
         const heroExist = await this.prisma.hero.findUnique({
             where: { id }
-        })
+        });
 
         if (!heroExist) {
             throw new Error(`Heroi com id ${id} não encontrado`);
-        }
-
-        if (!data || !data.nome || !data.imagem || !data.origem || !data.habilidades) {
-            throw new Error('Dados incompletos para atualização');
         }
 
         return await this.prisma.hero.update({
             where: { id },
             data
-        })
+        });
     }
 
-    async delete(id: number) {
+    async delete(id: string) {
         const heroExist = await this.prisma.hero.findUnique({
             where: { id }
-        })
+        });
+
         if (!heroExist) {
             throw new Error(`Heroi com id ${id} não encontrado`);
         }
+
         return await this.prisma.hero.delete({
             where: { id }
-        })
+        });
     }
 }

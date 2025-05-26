@@ -20,17 +20,16 @@ export class HeroesController {
 
     @Get(':id')
     async findOne(@Param('id') id: string) {
-        return this.heroesService.findOne(Number(id));
+        return this.heroesService.findOne(id);
     }
 
     @Put(':id')
-    @UsePipes(new ValidationPipe())
     async update(@Param('id') id: string, @Body() data: HeroesDTO) {
-        return this.heroesService.update(Number(id), data);
+        return this.heroesService.update(id, data);
     }
 
     @Delete(':id')
     async delete(@Param('id') id: string) {
-        return this.heroesService.delete(Number(id));
+        return this.heroesService.delete(id);
     }
 }

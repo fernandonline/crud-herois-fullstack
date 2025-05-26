@@ -9,17 +9,17 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
 
 model hero {
-  id		  Int     @id @default(autoincrement())
-  imagem      String  //@db.VarChar(255)
-  nome		  String  //@db.VarChar(100)
-  origem	  String  //@db.VarChar(100)
-  habilidades String  //@db.Text
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  imagem      String
+  nome        String
+  origem      String
+  habilidades String
 
   @@map("heroes")
 }
