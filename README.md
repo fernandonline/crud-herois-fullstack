@@ -25,7 +25,7 @@
 
 Backend de uma aplicação full-stack com Node.js com NestJS. O objetivo é desenvolver um sistema de gerenciamento de heróis da Marvel com operações CRUD (Create, Read, Update, Delete).
 
-## iniciar o projeto
+## Iniciar o projeto
 
 ```bash
 $ git clone <repositório>
@@ -35,7 +35,7 @@ $ cd <diretório-do-projeto>
 $ npm install
 ```
 
-## copile e rode
+## Copile e rode
 
 ```bash
 # development
