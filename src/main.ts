@@ -4,8 +4,10 @@ import * as express from 'express';
 
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);
-    app.use(express.json());
-    app.use(express.urlencoded({ extended: true }));
+    app.enableCors()
+    app.use(express.json())
+    app.use(express.urlencoded({ extended: true }))
+
     await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();
